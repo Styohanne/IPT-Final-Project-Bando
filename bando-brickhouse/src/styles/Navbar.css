@@ -4,15 +4,15 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #282c34;
-  padding: 1rem;
+  background-color: #1a0f0a;
+  padding: 1.5rem 0;           /* Increased vertical padding */
   z-index: 1000;            /* Keep it above everything */
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 2.5rem;                 /* More space between links */
   margin: 0;
   padding: 0;
   justify-content: center;  /* Optional: center the nav */
@@ -22,8 +22,14 @@
   color: white;
   text-decoration: none;
   font-weight: bold;
+  font-size: 1.35rem;          /* Larger font size */
+  padding: 0.5rem 1.2rem;      /* Bigger clickable area */
+  transition: background 0.2s, color 0.2s;
+  border-radius: 8px;
 }
 
 .navbar a:hover {
   text-decoration: underline;
+  background: #444;
+  color: #ffb347;
 }

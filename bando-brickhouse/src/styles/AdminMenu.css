@@ -1,0 +1,398 @@
+/* Pizza Parlor Admin Menu Styles */
+
+/* Main Container */
+.admin-menu-container {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  min-height: 100vh;
+  width: 100vw;
+  background: #272727;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Georgia', serif;
+  box-sizing: border-box;
+  padding: 0;
+  overflow-y: auto; /* Allow vertical scrolling */
+}
+
+/* Admin Card */
+.admin-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  width: 100%;
+  max-width: 800px;
+  min-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-y: auto;      /* <-- Change this */
+  box-sizing: border-box;
+  overflow-x: auto;
+  max-height: 90vh;      /* Prevent card from being taller than viewport */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Admin Header */
+.admin-header {
+  background: linear-gradient(135deg, #8B0000, #DC143C);
+  color: white;
+  text-align: center;
+  padding: 28px 18px;
+  position: relative;
+}
+
+.admin-emoji {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+.admin-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+  font-family: 'Georgia', serif;
+}
+
+.admin-subtitle {
+  font-size: 0.95rem;
+  margin: 5px 0 0 0;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+/* New Styles for Admin Header Section */
+.admin-header + div {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 24px 0 12px 0;
+}
+
+/* Form Container */
+.admin-form-container {
+  padding: 32px 22px;
+  background: #FFF8DC;
+  border-bottom: 2px solid #8B4513;
+}
+
+.form-title {
+  color: #8B0000;
+  font-size: 1.4rem;
+  margin: 0 0 20px 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Form Styles */
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-label {
+  color: #8B0000;
+  font-weight: bold;
+  font-size: 0.92rem;
+}
+
+.admin-input, .admin-textarea {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1.5px solid #8B4513;
+  border-radius: 7px;
+  font-size: 1rem;
+  background: #FFF;
+  color: #000;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+  font-family: 'Georgia', serif;
+}
+
+.admin-textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.admin-input:focus, .admin-textarea:focus {
+  outline: none;
+  border-color: #DC143C;
+  background: #FFF;
+}
+
+.admin-input:hover, .admin-textarea:hover {
+  border-color: #FF6347;
+}
+
+/* File Input Styling */
+.file-input-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;      /* Add this */
+  overflow: hidden;            /* Add this */
+}
+
+.file-input {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1.5px solid #8B4513;
+  border-radius: 7px;
+  background: #FFF;
+  color: #000;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  max-width: 100%;             /* Add this */
+  box-sizing: border-box;      /* Add this */
+}
+
+.file-input:hover {
+  border-color: #FF6347;
+}
+
+/* Preview Image */
+.preview-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #8B4513;
+  margin-top: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Buttons */
+.admin-button {
+  background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 7px;
+  font-size: 1.08rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  margin-right: 10px;
+  border: 1.5px solid #8B0000;
+  box-shadow: 0 2px 8px rgba(139,0,0,0.12);
+  font-family: 'Georgia', serif;
+}
+
+.admin-button:hover {
+  background: linear-gradient(135deg, #B22222 0%, #DC143C 100%);
+  transform: translateY(-2px);
+}
+
+.admin-button:active {
+  transform: translateY(0);
+}
+
+.admin-button[disabled] {
+  opacity: 0.7;
+  cursor: default;
+  background: #f0f0f0 !important;
+  color: #333 !important;
+  border: 1px solid #ccc;
+}
+
+.cancel-button {
+  background: linear-gradient(135deg, #666 0%, #444 100%);
+  border: 1.5px solid #444;
+}
+
+.cancel-button:hover {
+  background: linear-gradient(135deg, #555 0%, #666 100%);
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Menu Items Section */
+.menu-items-container {
+  padding: 32px 22px;
+  background: #FFF;
+}
+
+.menu-items-title {
+  color: #8B0000;
+  font-size: 1.4rem;
+  margin: 0 0 20px 0;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 2px solid #8B4513;
+  padding-bottom: 10px;
+}
+
+.menu-items-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  background: #FFF8DC;
+  border: 2px solid #8B4513;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.menu-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+}
+
+.item-name {
+  color: #8B0000;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0 0 5px 0;
+}
+
+.item-price {
+  color: #DC143C;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+
+.item-description {
+  color: #333;
+  margin: 0 0 15px 0;
+  line-height: 1.4;
+}
+
+.item-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #8B4513;
+  margin: 10px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.item-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.edit-button {
+  background: linear-gradient(135deg, #FF8C00 0%, #FF4500 100%);
+  border: 1.5px solid #FF4500;
+  font-size: 0.9rem;
+  padding: 8px 16px;
+}
+
+.edit-button:hover {
+  background: linear-gradient(135deg, #FF7700 0%, #FF8C00 100%);
+}
+
+.delete-button {
+  background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);
+  border: 1.5px solid #8B0000;
+  font-size: 0.9rem;
+  padding: 8px 16px;
+}
+
+.delete-button:hover {
+  background: linear-gradient(135deg, #B22222 0%, #DC143C 100%);
+}
+
+/* Divider */
+.section-divider {
+  border: none;
+  height: 2px;
+  background: linear-gradient(135deg, #8B4513, #DC143C);
+  margin: 0;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  padding: 40px 20px;
+  background: #FFF8DC;
+  border-radius: 8px;
+  border: 2px dashed #8B4513;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-menu-container {
+    padding: 10px;
+  }
+  
+  .admin-form-container, .menu-items-container {
+    padding: 20px 15px;
+  }
+  
+  .admin-title {
+    font-size: 1.5rem;
+  }
+  
+  .admin-emoji {
+    font-size: 2rem;
+  }
+  
+  .button-group {
+    flex-direction: column;
+  }
+  
+  .admin-button {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .item-actions {
+    flex-direction: column;
+  }
+  
+  .preview-image, .item-image {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-card {
+    margin: 0;
+    border-radius: 8px;
+  }
+  
+  .menu-item {
+    padding: 15px;
+  }
+  
+  .item-name {
+    font-size: 1.1rem;
+  }
+  
+  .item-price {
+    font-size: 1rem;
+  }
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.mb-10 { margin-bottom: 10px; }
+.mt-20 { margin-top: 20px; }
+.flex { display: flex; }
+.flex-column { flex-direction: column; }
+.gap-10 { gap: 10px; }

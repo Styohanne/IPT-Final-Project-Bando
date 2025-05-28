@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 
 import Dashboard from './pages/Website/Dashboard';
@@ -10,11 +11,20 @@ import Login from './pages/Login';
 import AdminMenu from './pages/Admin/AdminMenu';
 import Users from './pages/Admin/Users';
 
-function App() {
+import "./styles/Login.css";
+
+// Layout-aware component to use Router hooks
+function AppLayout() {
+  const location = useLocation();
+
+  // Define paths where Navbar should be hidden
+  const hideNavbarPaths = ['/login', '/admin/menu', '/admin/users'];
+  const hideNavbar = hideNavbarPaths.includes(location.pathname);
+
   return (
-    <Router>
-      <Navbar />
-      <div className="container" style={{ paddingTop: '80px' }}>
+    <>
+      {!hideNavbar && <Navbar />}
+      <div className="container" style={{ paddingTop: !hideNavbar ? '80px' : '0' }}>
         <Routes>
           {/* Website pages */}
           <Route path="/" element={<Dashboard />} />
@@ -28,7 +38,16 @@ function App() {
           <Route path="/admin/users" element={<Users />} />
         </Routes>
       </div>
-    </Router>
+    </>
+  );
+}
+
+// Root App component
+function App() {
+  return (
+    <BrowserRouter>
+      <AppLayout />
+    </BrowserRouter>
   );
 }
 
