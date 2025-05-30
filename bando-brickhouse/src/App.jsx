@@ -3,8 +3,6 @@ import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 
 import Dashboard from './pages/Website/Dashboard';
-import About from './pages/Website/About';
-import Location from './pages/Website/Location';
 import Menu from './pages/Website/Menu';
 import Login from './pages/Login';
 
@@ -28,8 +26,6 @@ function AppLayout() {
         <Routes>
           {/* Website pages */}
           <Route path="/" element={<Dashboard />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/location" element={<Location />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/login" element={<Login />} />
 

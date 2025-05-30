@@ -59,7 +59,8 @@
 .admin-subtitle {
   font-size: 0.95rem;
   margin: 5px 0 0 0;
-  opacity: 0.9;
+  color: #fff !important;
+  opacity: 1;
   font-style: italic;
 }
 
@@ -171,24 +172,26 @@
 }
 
 /* Buttons */
+/* Admin Buttons - Orange Theme */
 .admin-button {
-  background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);
-  color: white;
+  background: linear-gradient(135deg, #ff8c00 0%, #d2691e 100%);
+  color: #fff;
   border: none;
   padding: 14px 20px;
   border-radius: 7px;
   font-size: 1.08rem;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
+  transition: background 0.2s, transform 0.2s, color 0.2s;
   margin-right: 10px;
-  border: 1.5px solid #8B0000;
-  box-shadow: 0 2px 8px rgba(139,0,0,0.12);
+  border: 1.5px solid #ff8c00;
+  box-shadow: 0 2px 8px rgba(210,105,30,0.12);
   font-family: 'Georgia', serif;
 }
 
 .admin-button:hover {
-  background: linear-gradient(135deg, #B22222 0%, #DC143C 100%);
+  background: linear-gradient(135deg, #d2691e 0%, #ff8c00 100%);
+  color: #fff;
   transform: translateY(-2px);
 }
 
@@ -205,12 +208,56 @@
 }
 
 .cancel-button {
-  background: linear-gradient(135deg, #666 0%, #444 100%);
-  border: 1.5px solid #444;
+  background: linear-gradient(135deg, #ffe4e1 0%, #ff8c00 100%);
+  color: #d2691e;
+  border: 1.5px solid #ff8c00;
 }
 
 .cancel-button:hover {
-  background: linear-gradient(135deg, #555 0%, #666 100%);
+  background: linear-gradient(135deg, #ff8c00 0%, #ffe4e1 100%);
+  color: #fff;
+}
+
+/* Edit and Delete buttons in menu items - no color change on hover */
+.edit-button {
+  background: linear-gradient(135deg, #ff8c00 0%, #d2691e 100%);
+  color: #fff !important;
+  border: 1.5px solid #ff8c00;
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  font-weight: bold;
+  font-family: 'Georgia', serif;
+  transition: none;
+}
+
+.edit-button:hover {
+  background: linear-gradient(135deg, #ff8c00 0%, #d2691e 100%);
+  color: #fff !important;
+}
+
+/* Delete button: orange text, orange border, white background */
+.delete-button,
+.admin-pizza-actions .delete-button,
+.admin-pizza-card .delete-button {
+  background: #fff;
+  color: #ff8c00 !important;
+  border: 1.5px solid #ff8c00;
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  font-weight: bold;
+  font-family: 'Georgia', serif;
+  transition: none;
+}
+
+.delete-button:hover,
+.admin-pizza-actions .delete-button:hover,
+.admin-pizza-card .delete-button:hover,
+.delete-button:active,
+.admin-pizza-actions .delete-button:active,
+.admin-pizza-card .delete-button:active {
+  background: #fff;
+  color: #ff8c00 !important;
+  border: 1.5px solid #ff8c00;
 }
 
 .button-group {
@@ -292,28 +339,6 @@
   margin-top: 15px;
 }
 
-.edit-button {
-  background: linear-gradient(135deg, #FF8C00 0%, #FF4500 100%);
-  border: 1.5px solid #FF4500;
-  font-size: 0.9rem;
-  padding: 8px 16px;
-}
-
-.edit-button:hover {
-  background: linear-gradient(135deg, #FF7700 0%, #FF8C00 100%);
-}
-
-.delete-button {
-  background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);
-  border: 1.5px solid #8B0000;
-  font-size: 0.9rem;
-  padding: 8px 16px;
-}
-
-.delete-button:hover {
-  background: linear-gradient(135deg, #B22222 0%, #DC143C 100%);
-}
-
 /* Divider */
 .section-divider {
   border: none;
@@ -331,6 +356,182 @@
   background: #FFF8DC;
   border-radius: 8px;
   border: 2px dashed #8B4513;
+}
+
+/* Fullscreen concise admin layout */
+.admin-fullscreen {
+  min-height: 100vh;
+  width: 100vw;
+  background: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-header.concise {
+  background: #1a0f0a; /* Same as .navbar background-color */
+  color: #fff;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 8px 32px rgba(26,15,10,0.10);
+  padding: 24px 0 16px 0;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.admin-title {
+  color: #fff;
+}
+
+.admin-subtitle {
+  color: #fff !important;
+  opacity: 1;
+}
+
+.admin-nav-btns {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.admin-content.concise {
+  display: flex;
+  flex: 1;
+  gap: 32px;
+  padding: 32px 32px 0 32px;
+  align-items: flex-start;
+  background: #f7f7f7;
+}
+
+.admin-form.concise {
+  flex: 1 1 340px;
+  min-width: 320px;
+  max-width: 400px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  padding: 32px 22px;
+  margin-bottom: 0;
+  height: fit-content;
+}
+
+.admin-menu-list.concise {
+  flex: 2 1 0;
+  min-width: 0;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  padding: 32px 22px;
+  margin-bottom: 0;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.admin-pizza-grid.concise {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-top: 1rem;
+}
+
+.admin-pizza-card.concise {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.admin-pizza-img {
+  width: 100%;
+  max-width: 350px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+}
+
+.admin-pizza-info {
+  width: 100%;
+  text-align: left;
+  padding: 0 8px;
+}
+
+.admin-pizza-name {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.admin-pizza-price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #d2691e;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.admin-pizza-category {
+  display: inline-block;
+  background: #faf8f6;
+  color: #d2691e;
+  border-radius: 8px;
+  padding: 2px 10px;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.admin-pizza-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Make edit and delete buttons rectangular, not pill shaped */
+.edit-button,
+.delete-button,
+.admin-button,
+.cancel-button {
+  border-radius: 5px !important;
+}
+
+/* Change text colors from red to brown (#8B4513) */
+
+/* Form title and section titles */
+.form-title,
+.menu-items-title,
+.input-label,
+.item-name,
+.admin-pizza-name {
+  color: #8B4513 !important;
+}
+
+/* Price text */
+.item-price,
+.admin-pizza-price {
+  color: #8B4513 !important;
+}
+
+/* Category text */
+.admin-pizza-category,
+.item-category {
+  color: #8B4513 !important;
+}
+
+/* Button text for cancel and edit (if you want brown text on light backgrounds) */
+.cancel-button,
+.edit-button {
+  color: #8B4513 !important;
+}
+
+/* For subtitle if you want it brown instead of pinkish */
+.admin-subtitle {
+  color: #8B4513 !important;
+  opacity: 0.95;
 }
 
 /* Responsive Design */
@@ -396,3 +597,82 @@
 .flex { display: flex; }
 .flex-column { flex-direction: column; }
 .gap-10 { gap: 10px; }
+
+/* Edit button for users: always orange with white text */
+.admin-pizza-actions .edit-button,
+.edit-button {
+  background: linear-gradient(135deg, #ff8c00 0%, #d2691e 100%);
+  color: #fff !important;
+  border: 1.5px solid #ff8c00; /* Same as admin menu */
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  font-weight: bold;
+  font-family: 'Georgia', serif;
+  transition: none;
+}
+
+.admin-pizza-actions .edit-button:hover,
+.edit-button:hover,
+.admin-pizza-actions .edit-button:active,
+.edit-button:active {
+  background: linear-gradient(135deg, #ff8c00 0%, #d2691e 100%);
+  color: #fff !important;
+  border: 1.5px solid #ff8c00;
+}
+
+/* Delete button for users: always white with orange text */
+.admin-pizza-actions .delete-button,
+.delete-button {
+  background: #fff;
+  color: #ff8c00 !important;
+  border: 1.5px solid #ff8c00; /* Same as admin menu */
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  font-weight: bold;
+  font-family: 'Georgia', serif;
+  transition: none;
+}
+
+.admin-pizza-actions .delete-button:hover,
+.delete-button:hover,
+.admin-pizza-actions .delete-button:active,
+.delete-button:active {
+  background: #fff;
+  color: #ff8c00 !important;
+}
+
+/* Edit and Delete buttons for current menu items: match users style */
+
+/* Edit button for menu items: always orange with white text */
+.admin-pizza-card .edit-button {
+  background: linear-gradient(135deg, #ff8c00 0%, #d2691e 100%);
+  color: #fff !important;
+  border: 1.5px solid #ff8c00;
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  font-weight: bold;
+  font-family: 'Georgia', serif;
+  transition: none;
+}
+.admin-pizza-card .edit-button:hover,
+.admin-pizza-card .edit-button:active {
+  background: linear-gradient(135deg, #ff8c00 0%, #d2691e 100%);
+  color: #fff !important;
+}
+
+/* Delete button for menu items: always white with orange text */
+.admin-pizza-card .delete-button {
+  background: #fff;
+  color: #ff8c00 !important;
+  border: 1.5px solid #ff8c00;
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  font-weight: bold;
+  font-family: 'Georgia', serif;
+  transition: none;
+}
+.admin-pizza-card .delete-button:hover,
+.admin-pizza-card .delete-button:active {
+  background: #fff;
+  color: #ff8c00 !important;
+}

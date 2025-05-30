@@ -32,6 +32,11 @@ const menuSchema = new mongoose.Schema({
   description: String,
   price: Number,
   photoUrl: String, // This will store the file path or URL
+  category: {
+    type: String,
+    enum: ["pizza", "appetizers", "pasta", "dessert"],
+    required: true
+  }
 });
 const Menu = mongoose.model("Menu", menuSchema);
 
@@ -51,12 +56,12 @@ app.get("/api/menu", async (req, res) => {
 // Add new menu item
 app.post("/api/menu", upload.single("photo"), async (req, res) => {
   try {
-    const { name, description, price } = req.body;
+    const { name, description, price, category } = req.body;
     let photoUrl = "";
     if (req.file) {
       photoUrl = `/uploads/${req.file.filename}`;
     }
-    const menuItem = new Menu({ name, description, price, photoUrl });
+    const menuItem = new Menu({ name, description, price, photoUrl, category });
     await menuItem.save();
     res.status(201).json(menuItem);
   } catch (err) {
@@ -67,8 +72,8 @@ app.post("/api/menu", upload.single("photo"), async (req, res) => {
 // Update menu item
 app.put("/api/menu/:id", upload.single("photo"), async (req, res) => {
   try {
-    const { name, description, price } = req.body;
-    let update = { name, description, price };
+    const { name, description, price, category } = req.body;
+    let update = { name, description, price, category };
     if (req.file) {
       update.photoUrl = `/uploads/${req.file.filename}`;
     }

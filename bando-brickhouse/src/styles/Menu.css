@@ -1,0 +1,362 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #faf8f6; /* Add this if you want a default background */
+}
+
+.menu-page {
+  min-height: 100vh;
+  width: 100%;
+  background: #fff8ed; /* Soft warm beige */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.menu-hero {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  height: 60vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+              url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&h=600&fit=crop');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.menu-hero-content {
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.menu-title {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  letter-spacing: 2px;
+}
+
+.menu-subtitle {
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  font-style: italic;
+  color: #ff8c00;
+}
+
+/* Category Navigation */
+.category-nav {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background: white;
+  padding: 30px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  top: 0;
+  z-index: 10;
+}
+
+.nav-container {
+  width: 100%;
+  margin: 0;
+  padding: 0 20px;
+}
+
+.category-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.category-btn {
+  padding: 15px 30px;
+  border: 2px solid #d2691e;
+  background: transparent;
+  color: #d2691e;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.category-btn.active,
+.category-btn:hover {
+  background: #d2691e;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(210, 105, 30, 0.3);
+}
+
+.category-icon {
+  font-size: 1.2rem;
+}
+
+/* Menu Section */
+.menu-section {
+  padding: 80px 0;
+}
+
+.menu-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #d2691e;
+  margin-bottom: 3rem;
+  position: relative;
+  text-transform: capitalize;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #d2691e;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 40px;
+  margin-top: 4rem;
+}
+
+.menu-item {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.menu-item-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.menu-item:hover .menu-item-image {
+  transform: scale(1.05);
+}
+
+.menu-item-info {
+  padding: 30px;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.item-name {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: bold;
+  margin: 0;
+}
+
+.item-price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #d2691e;
+  white-space: nowrap;
+}
+
+.item-description {
+  color: #666;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Order Button */
+.order-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(45deg, #d2691e, #ff8c00);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.order-btn:hover {
+  background: linear-gradient(45deg, #ff8c00, #ffa500);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(210, 105, 30, 0.3);
+}
+
+/* Loading Animation */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modal Overlay */
+.menu-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.menu-modal-content {
+  background: #fff;
+  border-radius: 18px;
+  padding: 32px 24px;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+  position: relative;
+  text-align: center;
+}
+
+.menu-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #d2691e;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  aspect-ratio: 1 / 1; /* Ensures perfect circle */
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0; /* Remove any default padding */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu-title {
+    font-size: 2.5rem;
+  }
+  
+  .menu-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .category-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .category-btn {
+    width: 200px;
+    justify-content: center;
+  }
+  
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .item-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .item-price {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-title {
+    font-size: 2rem;
+  }
+  
+  .menu-hero {
+    height: 50vh;
+  }
+  
+  .menu-container,
+  .nav-container {
+    padding: 0 15px;
+  }
+  
+  .menu-item-info {
+    padding: 20px;
+  }
+  
+  .category-btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}

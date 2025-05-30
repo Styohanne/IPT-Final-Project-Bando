@@ -1,10 +1,10 @@
-/* Simplified Pizza Parlor Login Page Styles */
+/* Dashboard/Brickhouse Color Scheme Login Page Styles */
 
 /* Main Container - Full Screen */
 .pizza-login-container {
   min-height: 100vh;
   width: 100vw;
-  background: #272727;
+  background: #2c2c2c; /* Soft warm beige */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,13 +21,13 @@
   max-width: 400px;
   width: 100%;
   overflow: hidden;
-  border: 2px solid #8B4513;
+  border: 2px solid #1a0f0a;
   position: relative;
 }
 
-/* Pizza Header Section */
+/* Header Section */
 .pizza-header {
-  background: linear-gradient(135deg, #8B0000, #DC143C);
+  background: #1a0f0a; /* Solid brown, no gradient */
   color: white;
   text-align: center;
   padding: 28px 18px;
@@ -44,6 +44,8 @@
   font-weight: bold;
   margin: 0;
   font-family: 'Georgia', serif;
+  color: #fff; /* Changed from #ff8c00 to white */
+  letter-spacing: 1px;
 }
 
 .tagline {
@@ -51,6 +53,7 @@
   margin: 5px 0 0 0;
   opacity: 0.9;
   font-style: italic;
+  color: #d2691e;
 }
 
 /* Form Container */
@@ -59,7 +62,7 @@
 }
 
 .login-title {
-  color: #8B0000;
+  color: #d2691e;
   font-size: 1.4rem;
   margin: 0 0 5px 0;
   text-align: center;
@@ -87,7 +90,7 @@
 }
 
 .input-label {
-  color: #8B0000;
+  color: #d2691e;
   font-weight: bold;
   font-size: 0.92rem;
 }
@@ -103,33 +106,34 @@
   left: 12px;
   z-index: 1;
   font-size: 1.1rem;
+  color: #d2691e;
 }
 
 .pizza-input {
   width: 100%;
   padding: 13px 13px 13px 40px;
-  border: 1.5px solid #8B4513;
+  border: 1.5px solid #d2691e;
   border-radius: 7px;
   font-size: 1rem;
-  background: #FFF8DC; 
-  color: #000; 
+  background: #faf8f6;
+  color: #1a0f0a;
   box-sizing: border-box;
   transition: border-color 0.2s;
 }
 
 .pizza-input:focus {
   outline: none;
-  border-color: #DC143C;
-  background: #FFF8DC;
+  border-color: #ff8c00;
+  background: #fff;
 }
 
 .pizza-input:hover {
-  border-color: #FF6347;
+  border-color: #ff8c00;
 }
 
 /* Button */
 .pizza-button {
-  background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);
+  background: linear-gradient(135deg, #d2691e 0%, #ff8c00 100%);
   color: white;
   border: none;
   padding: 14px 20px;
@@ -139,12 +143,13 @@
   cursor: pointer;
   transition: background 0.2s, transform 0.2s;
   margin-top: 10px;
-  border: 1.5px solid #8B0000;
-  box-shadow: 0 2px 8px rgba(139,0,0,0.12);
+  border: 1.5px solid #d2691e;
+  box-shadow: 0 2px 8px rgba(210,105,30,0.12);
+  letter-spacing: 1px;
 }
 
 .pizza-button:hover {
-  background: linear-gradient(135deg, #B22222 0%, #DC143C 100%);
+  background: linear-gradient(135deg, #ff8c00 0%, #d2691e 100%);
   transform: translateY(-2px);
 }
 
@@ -163,14 +168,14 @@
 }
 
 .forgot-link, .signup-link {
-  color: #DC143C;
+  color: #d2691e;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s;
 }
 
 .forgot-link:hover, .signup-link:hover {
-  color: #8B0000;
+  color: #ff8c00;
   text-decoration: underline;
 }
 

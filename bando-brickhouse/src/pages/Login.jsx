@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom'; // <-- Add Link import
 import '../styles/Login.css';
 
 export default function Login() {
@@ -36,7 +36,7 @@ export default function Login() {
         <div className="pizza-header">
           <div className="pizza-emoji">🍕</div>
           <h1 className="restaurant-name">Brick Pizza House</h1>
-          <p className="tagline">Wood-Fired Excellence Since 1952</p>
+          <p className="tagline">Crafted Comfort, Brick by Brick.</p>
         </div>
         
         <div className="login-form-container">
@@ -87,9 +87,9 @@ export default function Login() {
           </form>
           
           <div className="login-footer">
-
+             <div className="divider">•</div>
+            <Link to="/" className="signup-link"> Go back to Dashboard</Link>
             <div className="divider">•</div>
-
           </div>
         </div>
       </div>

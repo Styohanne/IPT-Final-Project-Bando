@@ -12,21 +12,27 @@ body {
 
 .dashboard {
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   background: #3d3d3d;
   overflow-x: hidden;
 }
 
+/* Remove max-width and centering from .container */
 .container {
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  max-width: none;      /* Remove max-width */
+  margin: 0;            /* Remove auto-centering */
+  padding: 0;           /* Remove side padding */
   box-sizing: border-box;
 }
 
 /* Hero Section */
 .hero {
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
               url('/brick.png');
@@ -113,7 +119,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
-  align-items: center;
+  align-items: stretch; /* Make both columns the same height */
 }
 
 .about-text h2 {
@@ -140,23 +146,29 @@ body {
   line-height: 1.8;
 }
 
-.about-image img {
+.about-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  /* Remove any fixed height or width that could crop the image */
+  overflow: visible;
 }
 
-.about-pizza-image {
-  display: block;
+.about-image img {
   width: 100%;
-  max-width: 550px; /* or your preferred size */
-  margin: -40px auto 0 auto; /* Moves image up */
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  max-width: 600px;
+  height: 430px;
   object-fit: cover;
-  object-position: bottom;
+  object-position: center 85%; /* Adjust this value to show more/less of the bottom */
+  background: #f5f5f5;
+  border-radius: 20px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
 }
 
 /* Featured Pizzas */
@@ -197,6 +209,7 @@ body {
   overflow: hidden;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  padding: 24px;
 }
 
 .pizza-card:hover {
@@ -206,12 +219,18 @@ body {
 
 .pizza-card img {
   width: 100%;
-  height: 250px;
+  max-width: 450px;      /* Prevents images from being too wide on large screens */
+  height: 250px;         /* Consistent height for pizza cards */
   object-fit: cover;
+  border-radius: 16px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
 }
 
 .pizza-info {
-  padding: 30px;
+  padding: 24px 16px 16px 16px;
 }
 
 .pizza-info h3 {
@@ -270,6 +289,7 @@ body {
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  padding: 24px;
 }
 
 .feature:hover {
@@ -346,6 +366,11 @@ body {
   padding: 60px 0 20px;
 }
 
+.footer.small-footer {
+  padding: 18px 0 8px 0;
+  font-size: 0.95rem;
+}
+
 .footer-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -384,22 +409,38 @@ body {
 
 .social-links {
   display: flex;
-  gap: 15px;
+  gap: 16px;
+  align-items: center;
 }
 
 .social-link {
-  color: #ccc;
-  text-decoration: none;
-  padding: 10px;
-  border: 1px solid #444;
-  border-radius: 50px;
-  transition: all 0.3s ease;
+  color: #ff8c00;
+  font-size: 1.5rem;
+  background: #fff;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #ff8c00;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+
+.social-link i {
+  color: #ff8c00 !important; /* Force orange icon */
+  font-size: 1.3rem;
+  transition: color 0.2s;
 }
 
 .social-link:hover {
   background: #ff8c00;
-  color: white;
-  border-color: #ff8c00;
+  color: #fff;
+  border-color: #fff;
+}
+
+.social-link:hover i {
+  color: #fff !important; /* White icon on hover */
 }
 
 .footer-bottom {
@@ -409,7 +450,64 @@ body {
   color: #888;
 }
 
-/* Responsive Design */
+/* Add padding inside cards and features */
+.pizza-card,
+.feature,
+.footer-section {
+  padding: 24px 24px 24px 24px;
+  box-sizing: border-box;
+}
+
+/* Add padding to info sections inside cards */
+.pizza-info {
+  padding: 24px 16px 16px 16px;
+}
+
+/* Prevent text from stretching too wide */
+.pizza-info,
+.feature,
+.footer-section,
+.about-text,
+.contact-info {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Add horizontal padding to main sections for breathing room */
+.about,
+.featured,
+.features,
+.contact,
+.footer {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+/* Responsive: reduce padding on small screens */
+@media (max-width: 768px) {
+  .about,
+  .featured,
+  .features,
+  .contact,
+  .footer {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .pizza-card,
+  .feature,
+  .footer-section {
+    padding: 16px 8px;
+  }
+  .pizza-info,
+  .feature,
+  .footer-section,
+  .about-text,
+  .contact-info {
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-title {
     font-size: 2.5rem;
@@ -440,7 +538,7 @@ body {
   }
   
   .container {
-    padding: 0 15px;
+    padding: 0 !important;
   }
   
   section {
@@ -466,5 +564,33 @@ body {
   .cta-button {
     padding: 12px 24px;
     font-size: 1rem;
+  }
+}
+
+/* Picture box improvements */
+.pizza-card img,
+.about-image img,
+.restaurant-image img {
+  object-fit: cover;
+}
+
+/* For about and restaurant images, allow taller images */
+.about-image img,
+.restaurant-image img {
+  height: 430px;
+  max-width: 600px;
+}
+
+/* Responsive: adjust image sizes on small screens */
+@media (max-width: 768px) {
+  .pizza-card img,
+  .about-image img,
+  .restaurant-image img {
+    height: 180px;
+    max-width: 100%;
+  }
+  .about-image img,
+  .restaurant-image img {
+    height: 220px;
   }
 }
